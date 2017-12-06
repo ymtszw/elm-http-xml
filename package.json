@@ -1,0 +1,32 @@
+{
+  "name": "elm-http-xml",
+  "version": "1.0.0",
+  "description": "Elm Http client for XML API",
+  "devDependencies": {
+    "elm": "^0.18.0",
+    "elm-analyse": "^0.12.1",
+    "elm-test": "^0.18.10"
+  },
+  "scripts": {
+    "test": "elm-test",
+    "make": "elm-make",
+    "package": "elm-package",
+    "docs": "elm-make --docs=docs.json",
+    "analyse": "elm-analyse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ymtszw/elm-http-xml.git"
+  },
+  "keywords": [
+    "Xml",
+    "Http",
+    "Elm"
+  ],
+  "author": "ymtszw",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/ymtszw/elm-http-xml/issues"
+  },
+  "homepage": "https://github.com/ymtszw/elm-http-xml#readme"
+}
