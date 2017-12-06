@@ -1,7 +1,10 @@
 # elm-http-xml
 
-[![GitHub package version](https://img.shields.io/github/package-json/v/badges/shields.svg)](http://package.elm-lang.org/packages/ymtszw/elm-http-xml/latest)
-![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+[![GitHub package version][v]](http://package.elm-lang.org/packages/ymtszw/elm-http-xml/latest)
+[![license][l]](https://github.com/ymtszw/elm-http-xml/blob/master/LICENSE)
+
+[v]: https://img.shields.io/badge/dynamic/json.svg?label=elm-package&colorB=green&query=$.version&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fymtszw%2Felm-http-xml%2Fmaster%2Felm-package.json
+[l]: https://img.shields.io/badge/dynamic/json.svg?label=license&colorB=blue&query=$.license&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fymtszw%2Felm-http-xml%2Fmaster%2Felm-package.json
 
 Generates HTTP request for XML API. Can be used with [`elm-lang/http`][http].
 
