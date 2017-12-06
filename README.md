@@ -1,6 +1,7 @@
 # elm-http-xml
 
-[![Build Status](https://travis-ci.org/ymtszw/elm-http-xml.svg?branch=master)](https://travis-ci.org/ymtszw/elm-http-xml)
+[![GitHub package version](https://img.shields.io/github/package-json/v/badges/shields.svg)](http://package.elm-lang.org/packages/ymtszw/elm-http-xml/latest)
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 Generates HTTP request for XML API. Can be used with [`elm-lang/http`][http].
 
