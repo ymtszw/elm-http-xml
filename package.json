@@ -1,14 +1,12 @@
 {
   "name": "elm-http-xml",
   "version": "1.0.0",
-  "description": "Elm Http client for XML API",
+  "description": "Elm Http request generator for XML API",
   "devDependencies": {
     "elm": "^0.18.0",
-    "elm-analyse": "^0.12.1",
-    "elm-test": "^0.18.10"
+    "elm-analyse": "^0.12.1"
   },
   "scripts": {
-    "test": "elm-test",
     "make": "elm-make",
     "package": "elm-package",
     "docs": "elm-make --docs=docs.json",
