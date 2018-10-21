@@ -1,16 +1,10 @@
 # elm-http-xml
 
-[![GitHub package version][v]](http://package.elm-lang.org/packages/ymtszw/elm-http-xml/latest)
-[![license][l]](https://github.com/ymtszw/elm-http-xml/blob/master/LICENSE)
-
-[v]: https://img.shields.io/badge/elm--package-1.0.1-blue.svg?maxAge=3600
-[l]: https://img.shields.io/badge/license-BSD--3--Clause-blue.svg?maxAge=3600
-
-Generates HTTP request for XML API. Can be used with [`elm-lang/http`][http].
+Generates HTTP request for XML API. Can be used with [`elm/http`][http].
 
 Using [`ymtszw/elm-xml-decode`][exd] for decoding XML response into Elm values.
 
-[http]: http://package.elm-lang.org/packages/elm-lang/http/latest
+[http]: http://package.elm-lang.org/packages/elm/http/latest
 [exd]: http://package.elm-lang.org/packages/ymtszw/elm-xml-decode/latest
 
 ## Basic Example
@@ -18,17 +12,26 @@ Using [`ymtszw/elm-xml-decode`][exd] for decoding XML response into Elm values.
 ```elm
 import Http
 import Http.Xml
-import Xml.Decode exposing (single, string)
+import Xml.Decode exposing (..)
 
-type Msg = XmlMsg (Result Http.Error String)
+type alias Data =
+    { string : String
+    , integers : List Int
+    }
 
-getXmlReq : Http.Request String
-getXmlReq =
-    Http.Xml.request "GET" [] "https://example.com/xml" Http.emptyBody (single string)
+type Msg = XmlApiResponse (Result Http.Error Data)
 
 getXml : Cmd Msg
 getXml =
-    Http.send XmlMsg getXmlReq
+    Http.send XmlApiResponse <|
+        Http.Xml.get "https://example.com/data.xml" dataDecoder
+
+dataDecoder : Decoder Data
+dataDecoder =
+    map2 Data
+        (path [ "path", "to", "string" ] (single string))
+        (path [ "path", "to", "int", "list" ] (list int))
+
 ```
 
 ## License
