@@ -1,4 +1,8 @@
-module Http.Xml exposing (request, get, post, put, patch, xmlBody, expectXml)
+module Http.Xml exposing
+    ( request, get, post, put, patch
+    , xmlBody
+    , expectXml
+    )
 
 {-| Generates HTTP request for XML API.
 
@@ -23,7 +27,7 @@ Using [`Xml.Decode`][xd] for decoding XML response into Elm value.
 
 -}
 
-import Http exposing (Expect, Request, Response, Header, Body)
+import Http exposing (Body, Expect, Header, Request, Response)
 import Xml.Decode exposing (Decoder)
 
 
