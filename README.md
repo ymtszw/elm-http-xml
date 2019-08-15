@@ -49,6 +49,13 @@ trickyGetXml =
 
 ```
 
+## Upgrade from 1.x to 2.x
+
+- It now supports `elm/http@2.x`, which drops `Http.Request` data type. As a result, there is no interface to nicely add `Accept: application/xml` header.
+  **You have to add the header** if your target servers rigorously require them.
+  - Probably the most reasonable interface which should take `Accept` header values are `Http.Expect`.
+  - See this issue: https://github.com/elm/http/issues/54
+
 ## License
 
 BSD-3-Clause

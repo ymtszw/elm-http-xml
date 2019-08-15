@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0 (In development)
+## 2.0.0
 
 - Update APIs to match with `2.x` of `elm/http`
 
