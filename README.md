@@ -23,14 +23,29 @@ type Msg = XmlApiResponse (Result Http.Error Data)
 
 getXml : Cmd Msg
 getXml =
-    Http.send XmlApiResponse <|
-        Http.Xml.get "https://example.com/data.xml" dataDecoder
+    Http.get
+        { url = "https://example.com/data.xml"
+        , expect = Http.Xml.expectXml XmlApiResponse dataDecoder
+        }
 
 dataDecoder : Decoder Data
 dataDecoder =
     map2 Data
         (path [ "path", "to", "string" ] (single string))
         (path [ "path", "to", "int", "list" ] (list int))
+
+-- Use with customization
+trickyGetXml : Cmd Msg
+trickyGetXml =
+    Http.riskyRequest
+        { method = "GET"
+        , headers = [ Http.header "Accept" "application/xml" ]
+        , url = "https://example.com/data.xml"
+        , body = Http.emptyBody
+        , expect = Http.Xml.expectXml XmlApiResponse dataDecoder
+        , timeout = Nothing
+        , tracker = Nothing
+        }
 
 ```
 
